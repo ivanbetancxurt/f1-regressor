@@ -11,7 +11,7 @@ def fastest_lap_to_seconds(df): # convert 'mm:ss.ss' format to seconds
         else:
             return 300
 
-    df['fastest_lap'] = df['fastest_lap'].apply(convert) # apply
+    df['fastest_lap'] = df['fastest_lap'].apply(convert) # apply function
 
     return df
 
