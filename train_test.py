@@ -8,9 +8,9 @@ from sklearn.svm import SVR
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_absolute_error
 
-def train_test(pipeline, model_id): # find best parameters, fit pipeline, and test
+def train_test(model_id): # find best parameters, fit pipeline, and test
     df = pd.read_csv('data/dataframes/raw_numerical.csv') # get dataset
-    X = df.drop(columns='finishing_pos') # get unlabeled version
+    X = df.drop(columns='finishing_pos') # extract features
     y = df['finishing_pos'] # extract labels
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=25) # split features and labels with 80-20 split
@@ -22,9 +22,7 @@ def train_test(pipeline, model_id): # find best parameters, fit pipeline, and te
             'model__min_samples_leaf': [1, 3, 5]
         }),
         'ridge': (Ridge(random_state=25), {
-            'model__n_estimators': [50, 100, 200],
-            'model__max_depth':    [None, 10, 20],
-            'model__min_samples_leaf': [1, 3, 5]
+            'model__alpha': [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
         }),
         'svr': (SVR(), {
             'model__C': [0.1, 1.0, 10.0, 100.0],
@@ -48,8 +46,26 @@ def train_test(pipeline, model_id): # find best parameters, fit pipeline, and te
 
     grid_search.fit(X_train, y_train) # run the grid search on the training set
 
+    # print message if any of the best parameters happen to be at an edge of the parameter grid
+    for param, vals in param_grid.items():
+        if grid_search.best_params_[param] in (vals[0], vals[-1]):
+            print(f'⚠️ {param} = {grid_search.best_params_[param]} at grid edge {vals}!')
+
     best_model = grid_search.best_estimator_ # get the model with best performing parameters
+    best_params_str = '_'.join(f'{param.split('__')[-1]}-{value}' for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
 
     y_pred = best_model.predict(X_test) # predict on testing set 
-    #todo: save predictions as CSV
-    print("MAE:", mean_absolute_error(y_test, y_pred)) 
+    results = pd.DataFrame({ # make dataframe showing results against actual labels
+        'actual':    y_test,
+        'predicted': y_pred
+    })  
+
+    results.to_csv(f'data/results/{model_id}_{best_params_str}.csv', index=False) # save resutls
+
+    return { # return model and MAE on testing set
+        'model': best_model,
+        'model_id': model_id,
+        'best_params': grid_search.best_params_,
+        'cv_MAE': -grid_search.best_score_,
+        'test_MAE': mean_absolute_error(y_test, y_pred)
+    }
