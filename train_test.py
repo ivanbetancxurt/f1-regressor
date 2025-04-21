@@ -17,17 +17,15 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
 
     models = { # collection of models and their parameter grids (as tuples) to chosen from wtih model_id
         'randomforest': (RandomForestRegressor(random_state=25), {
-            'model__n_estimators': [50, 100, 200],
-            'model__max_depth':    [None, 10, 20],
-            'model__min_samples_leaf': [1, 3, 5]
+            'model__n_estimators': [600, 700, 800],
+            'model__max_depth': [17, 20, 23],
         }),
         'ridge': (Ridge(random_state=25), {
-            'model__alpha': [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+            'model__alpha': [2, 3, 5, 7, 9]
         }),
         'svr': (SVR(), {
             'model__C': [0.1, 1.0, 10.0, 100.0],
-            'model__gamma':   ['scale', 'auto', 0.001, 0.01, 0.1],
-            'model__epsilon': [0.01, 0.1, 0.2, 0.5]
+            'model__gamma':   [0.1, 0.5, 1],
         })
     }
 
@@ -52,7 +50,8 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
             print(f'⚠️ {param} = {grid_search.best_params_[param]} at grid edge {vals}!')
 
     best_model = grid_search.best_estimator_ # get the model with best performing parameters
-    best_params_str = '_'.join(f'{param.split('__')[-1]}-{value}' for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
+    #best_params_str = '_'.join(f'{param.split('__')[-1]}-{value}' for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
+    best_params_str = '_'.join(f"{param.split('__')[-1]}-{value}" for param, value in grid_search.best_params_.items())
 
     y_pred = best_model.predict(X_test) # predict on testing set 
     results = pd.DataFrame({ # make dataframe showing results against actual labels
@@ -63,7 +62,6 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
     results.to_csv(f'data/results/{model_id}_{best_params_str}.csv', index=False) # save resutls
 
     return { # return model and MAE on testing set
-        'model': best_model,
         'model_id': model_id,
         'best_params': grid_search.best_params_,
         'cv_MAE': -grid_search.best_score_,
