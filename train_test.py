@@ -50,8 +50,7 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
             print(f'⚠️ {param} = {grid_search.best_params_[param]} at grid edge {vals}!')
 
     best_model = grid_search.best_estimator_ # get the model with best performing parameters
-    #best_params_str = '_'.join(f'{param.split('__')[-1]}-{value}' for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
-    best_params_str = '_'.join(f"{param.split('__')[-1]}-{value}" for param, value in grid_search.best_params_.items())
+    best_params_str = '_'.join(f"{param.split('__')[-1]}-{value}" for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
 
     y_pred = best_model.predict(X_test) # predict on testing set 
     results = pd.DataFrame({ # make dataframe showing results against actual labels
