@@ -29,6 +29,10 @@ def one_hot_encode(df): # one-hot encode categorical columns
 
     df.to_csv('data/dataframes/raw_numerical.csv', index=False) # save
 
-raw_df = pd.read_csv('data/dataframes/raw.csv')
-raw_df = fastest_lap_to_seconds(raw_df)
-one_hot_encode(raw_df)
+def main():
+    raw_df = pd.read_csv('data/dataframes/raw.csv')
+    raw_df = fastest_lap_to_seconds(raw_df)
+    one_hot_encode(raw_df)  
+
+if __name__ == '__main__':
+    main()

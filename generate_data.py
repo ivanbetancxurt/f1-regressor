@@ -67,6 +67,10 @@ def build_raw_dataframe():
         raw_df = pd.DataFrame(instances)
         raw_df.to_csv('data/dataframes/raw.csv', index=False)
 
-fetch_and_save_jsons()
-clean_jsons()
-build_raw_dataframe()
+def main():
+    #fetch_and_save_jsons()
+    clean_jsons()
+    #build_raw_dataframe()
+
+if __name__ == '__main__':
+    main()
