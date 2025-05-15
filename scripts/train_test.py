@@ -17,8 +17,8 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
 
     models = { # collection of models and their parameter grids (as tuples) to chosen from wtih model_id
         'randomforest': (RandomForestRegressor(random_state=25), {
-            'model__n_estimators': [600, 700, 800],
-            'model__max_depth': [17, 20, 23],
+            'model__n_estimators': [700],
+            'model__max_depth': [23],
         }),
         'ridge': (Ridge(random_state=25), {
             'model__alpha': [2, 3, 5, 7, 9]
@@ -53,17 +53,19 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
     best_params_str = '_'.join(f"{param.split('__')[-1]}-{value}" for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
     joblib.dump(best_model, f'models/{model_id}_{best_params_str}.joblib') # serialize and save the model for future use
 
+    '''
     y_pred = best_model.predict(X_test) # predict on testing set 
     results = pd.DataFrame({ # make dataframe showing results against actual labels
-        'actual':    y_test,
+        'actual': y_test,
         'predicted': y_pred
     })  
 
     results.to_csv(f'data/results/{model_id}_{best_params_str}.csv', index=False) # save resutls
+    '''
 
     return { # return model and MAE on testing set
         'model_id': model_id,
         'best_params': grid_search.best_params_,
         'cv_MAE': -grid_search.best_score_,
-        'test_MAE': mean_absolute_error(y_test, y_pred)
+        #'test_MAE': mean_absolute_error(y_test, y_pred)
     }
