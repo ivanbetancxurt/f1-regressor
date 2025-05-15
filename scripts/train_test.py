@@ -1,12 +1,12 @@
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
-from create_pipeline import create_pipeline
+from scripts.create_pipeline import create_pipeline
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Ridge
 from sklearn.svm import SVR
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_absolute_error
+import joblib
 
 def train_test(model_id): # find best parameters, fit pipeline, and test
     df = pd.read_csv('data/dataframes/raw_numerical.csv') # get dataset
@@ -51,6 +51,7 @@ def train_test(model_id): # find best parameters, fit pipeline, and test
 
     best_model = grid_search.best_estimator_ # get the model with best performing parameters
     best_params_str = '_'.join(f"{param.split('__')[-1]}-{value}" for param, value in grid_search.best_params_.items()) # build string showing best model's parameters
+    joblib.dump(best_model, f'models/{model_id}_{best_params_str}.joblib') # serialize and save the model for future use
 
     y_pred = best_model.predict(X_test) # predict on testing set 
     results = pd.DataFrame({ # make dataframe showing results against actual labels
