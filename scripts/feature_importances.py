@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.inspection import permutation_importance
 
-def extract_importances(model, X_test, y_test, best_params_str):
+def extract_importances(model, X_test, y_test, best_params_str, model_id):
     result = permutation_importance( # for each feature, shuffle its values and predict on testing set. do this 10 times for a num_features x 10 collection of drops in MAE
         model, X_test, y_test,
         n_repeats=10, random_state=25,
@@ -11,4 +11,4 @@ def extract_importances(model, X_test, y_test, best_params_str):
     importance_df = pd.DataFrame({ # get the mean drop in MAE for each feature and place it next to its feature name in a dataframe
         'feature': X_test.columns,
         'importance': result.importances_mean
-    }).sort_values('importance', ascending=False).to_csv(f'data/importances/randomforest_max_depth-23_n_estimators-700_importances.csv', index=False)
+    }).sort_values('importance', ascending=False).to_csv(f'data/importances/{model_id}_{best_params_str}_importances.csv', index=False)
