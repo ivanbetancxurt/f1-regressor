@@ -27,9 +27,13 @@ Formula 1 changes drivers and teams freqently and I wanted to avoid, as much as 
 
 **3. Cross validation, training, and testing**
 
-Splitting the data in to 80% for training and 20% for testing, I ran a 10-fold grid search cross validation for each model. As for the parameter grids for each model, I chose to keep it simple and not to explore very many hyper parameters; I began broad and iteratively updated the parameter grid in the direction that scored best until values the search converged to were not at the edges of the their grids. I used negative mean absolute error for the scoring.
+Splitting the data in to 80% for training and 20% for testing, I ran a 10-fold grid search cross validation for each model. As for the parameter grids for each model, I chose to keep it simple and not to explore very many hyper parameters; I began with a broad grid and iteratively updated it in the direction that scored best until the values the search converged to were not at the edges of the their grids. I used negative mean absolute error for the cross validation scoring.
 
 After each cross validation is done, the model with the best score is serialized and saved using joblib and used on the testing set, saving their predictions in `data/results`. (The serialized models are too large to push to GitHub, so they are not included in this repo).
+
+**4. Feautre importance**
+
+Finally, I thought it would be interesting to see which features ended up being the best predictors for finishing position. For simplicity, I took a model agnostic approach and used ScikitLearn's permuation feature importance algorithm. Using joblib to recontruct my best models, I ran the algorithm on them using negative mean absolute error as the scoring metric. I organized the results into a two column tables (feature name and score) sorted in descending order by score (most important features towards the top). These tables are saved in `data/importances`.
 
  ## Results
 
