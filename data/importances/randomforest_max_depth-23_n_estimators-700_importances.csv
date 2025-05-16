@@ -1,0 +1,261 @@
+feature,importance
+status_Finished,2.1847610004310285
+grid_pos,1.6410692401291478
+constructor_ferrari,0.08718545070090751
+constructor_red_bull,0.08073427969589013
+constructor_mercedes,0.07583274185988671
+fastest_lap_avg_speed,0.06808450661892378
+fastest_lap,0.056653666496847464
+constructor_hrt,0.03438346552546183
+constructor_toro_rosso,0.03210289574017335
+circuit_indianapolis,0.027600296198873765
+constructor_mclaren,0.020003710604711865
+constructor_haas,0.019894055778873775
+constructor_caterham,0.01866286847821357
+constructor_marussia,0.016099573971303904
+constructor_virgin,0.015770520950427348
+constructor_sauber,0.015516016357413554
+circuit_albert_park,0.01421027862818729
+constructor_manor,0.01316172557568116
+constructor_lotus_racing,0.010169070423122229
+constructor_williams,0.008847526375296687
+driver_massa,0.00834657095733049
+constructor_toyota,0.007702165637795045
+driver_maldonado,0.0074878323622284085
+driver_hamilton,0.006847989222970696
+driver_perez,0.006105149940275156
+driver_hulkenberg,0.006002636764791491
+driver_kobayashi,0.005738184553192483
+constructor_force_india,0.0056959245768933185
+driver_max_verstappen,0.005174024417951317
+circuit_interlagos,0.004732355451226367
+constructor_alpine,0.004522699258220975
+driver_raikkonen,0.004261229398733679
+driver_bottas,0.003992979476976277
+driver_alonso,0.00387565929934115
+constructor_alfa,0.0036661359697977235
+driver_glock,0.0034794159194701637
+status_Disqualified,0.0032987141746824824
+status_Withdrew,0.0032233458089721
+circuit_baku,0.003164195873295572
+driver_gasly,0.003097182481737715
+circuit_suzuka,0.0030502322936070136
+circuit_villeneuve,0.003022898202158153
+circuit_monza,0.00299543557111992
+driver_vettel,0.002760142833748258
+driver_vandoorne,0.002700795097399977
+driver_michael_schumacher,0.0025174433096094794
+driver_tsunoda,0.002370383941612708
+circuit_catalunya,0.0022003679148472344
+circuit_americas,0.002176297516726322
+driver_webber,0.002115275460145627
+circuit_fuji,0.0018734807237886565
+driver_liuzzi,0.001792325506828485
+status_Collision,0.0016179976662436424
+driver_ricciardo,0.0015212061081489204
+driver_coulthard,0.0014868040261604154
+driver_heidfeld,0.0014001310985078063
+driver_sato,0.0013575573368185712
+constructor_bmw_sauber,0.0013409387952394436
+circuit_silverstone,0.0012862440849168877
+constructor_lotus_f1,0.001268055545637381
+driver_mazepin,0.0012593358365592167
+driver_kubica,0.0012513240831382166
+driver_fisichella,0.0012506036820840282
+driver_sargeant,0.001247603981368295
+driver_kovalainen,0.0011393166415966326
+driver_kevin_magnussen,0.001109420323489374
+driver_trulli,0.0011001487743076855
+driver_mick_schumacher,0.0010631105798160068
+driver_resta,0.0010089788941388456
+driver_ralf_schumacher,0.0009793259095188134
+driver_sainz,0.0009712747891447382
+circuit_imola,0.0009548421443586364
+status_Clutch,0.0009266111813280187
+circuit_yas_marina,0.0008902774405783909
+constructor_super_aguri,0.0008767455818070591
+constructor_alphatauri,0.0008186205709243665
+circuit_hockenheimring,0.0008165679754145838
+driver_jolyon_palmer,0.0008096338341350596
+circuit_rodriguez,0.0007968140180789173
+driver_klien,0.0007953424360691574
+driver_bourdais,0.0007794227412862397
+status_Retired,0.000729037632761953
+circuit_miami,0.0006850910910348506
+driver_button,0.0006771599112727955
+status_Suspension,0.0006649125939833134
+driver_sutil,0.0006550637759060063
+driver_chandhok,0.0006262131952024852
+driver_villeneuve,0.000602088023270797
+driver_latifi,0.0006005552789766
+status_Gearbox,0.0005719257793280974
+driver_albon,0.0005501496549121132
+circuit_sepang,0.0005096513266765968
+driver_montoya,0.0005034244920270048
+constructor_honda,0.0004888488930593127
+driver_rosberg,0.00046526005481002387
+driver_kvyat,0.00045372587337753065
+driver_stroll,0.00045344876357833463
+driver_ericsson,0.0004081720502207897
+circuit_buddh,0.00039424997153680863
+circuit_istanbul,0.0003852430085112157
+driver_gutierrez,0.00037410012154870387
+driver_brendon_hartley,0.0003648212072127954
+status_Transmission,0.00034935332079788495
+constructor_renault,0.00034489139292146473
+driver_bruno_senna,0.00030397628793932263
+constructor_spyker,0.0003034559818478222
+driver_wurz,0.0002859943660482589
+status_Did not qualify,0.00027990003202749136
+driver_garde,0.0002199396861305214
+status_Tyre,0.00021275093366832643
+status_Brakes,0.00020314022621858996
+driver_giovinazzi,0.0002014057687703019
+circuit_hungaroring,0.00019409676932298227
+status_Electrical,0.0001912608563753526
+circuit_vegas,0.00018878629666527758
+driver_alguersuari,0.00018613793939703527
+driver_grassi,0.0001849428731370395
+driver_speed,0.00018354265772515532
+constructor_rb,0.00017265903175145425
+driver_pic,0.00017123898852133834
+constructor_minardi,0.00016964126502321263
+status_Driveshaft,0.00016739684073137085
+constructor_jaguar,0.00015593245676064348
+status_Power loss,0.00015517450386561826
+status_Oil leak,0.00015422361678822937
+driver_pizzonia,0.0001353129849989365
+driver_nasr,0.00013054936802223694
+status_Fuel pressure,0.00012639704135035678
+driver_nakajima,0.00010185857082869453
+driver_pantano,9.086397894080278e-05
+driver_haryanto,8.683913056333204e-05
+status_Puncture,8.587522191656482e-05
+driver_zhou,8.329477972770504e-05
+status_Fuel pump,7.285413222422044e-05
+driver_grosjean,6.843418867665818e-05
+driver_montagny,6.745974949042832e-05
+circuit_mugello,6.215961848559104e-05
+constructor_jordan,5.7603856242804954e-05
+status_Wheel,5.217818332341473e-05
+driver_yamamoto,4.5005555508659255e-05
+status_Spun off,4.085167305607484e-05
+driver_davidson,2.4011655967681735e-05
+status_Oil pressure,2.1206292987629993e-05
+driver_ambrosio,2.059592623187001e-05
+driver_pietro_fittipaldi,1.011343544057297e-05
+circuit_jeddah,9.556348765782374e-06
+status_Technical,5.983745490878434e-06
+status_Turbo,2.9749435306314354e-06
+driver_colapinto,1.6641827175867264e-06
+driver_de_vries,1.5988263466049091e-06
+status_Undertray,3.643075727310929e-07
+status_Differential,0.0
+status_Fuel leak,0.0
+status_Drivetrain,0.0
+status_Pneumatics,0.0
+status_Refuelling,0.0
+status_Front wing,0.0
+driver_doohan,0.0
+status_Debris,0.0
+status_Fire,0.0
+driver_aitken,0.0
+status_Alternator,0.0
+status_Driver Seat,0.0
+status_Excluded,0.0
+status_Engine misfire,0.0
+status_Broken wing,0.0
+status_Radiator,0.0
+status_Engine fire,0.0
+status_Cooling system,0.0
+status_Damage,0.0
+status_Brake duct,0.0
+status_ERS,0.0
+driver_lotterer,0.0
+driver_badoer,0.0
+status_Wheel rim,0.0
+status_Wheel nut,0.0
+status_Water pump,0.0
+status_Water leak,0.0
+status_Not classified,0.0
+status_Injury,0.0
+status_Injured,0.0
+status_Tyre puncture,0.0
+driver_friesacher,0.0
+driver_bearman,0.0
+status_Seat,0.0
+status_Illness,0.0
+status_Heat shield fire,0.0
+status_Spark plugs,0.0
+status_Track rod,0.0
+status_Handling,0.0
+status_Throttle,0.0
+status_Fuel system,0.0
+driver_gene,0.0
+driver_markus_winkelhock,0.0
+status_Battery,-2.5221699635480376e-07
+status_Exhaust,-1.5833504553253165e-06
+status_Collision damage,-3.1693845659486188e-06
+driver_bruni,-3.668748698526514e-06
+constructor_spyker_mf1,-4.068704445225891e-06
+status_Mechanical,-6.9615451030458075e-06
+status_Steering,-7.68012843703758e-06
+status_Electronics,-8.335380975754703e-06
+driver_matta,-8.600178752793397e-06
+driver_monteiro,-1.0585462897561015e-05
+status_Overheating,-1.8229560519467115e-05
+circuit_zandvoort,-1.9226310542874715e-05
+status_Out of fuel,-2.4905730090818422e-05
+status_Water pressure,-2.5275525827384016e-05
+driver_panis,-2.706983056746104e-05
+driver_stevens,-3.536960885512919e-05
+circuit_nurburgring,-3.7406556155472614e-05
+driver_ide,-4.225717432340126e-05
+driver_lawson,-4.452894509796579e-05
+status_Power Unit,-4.70614969591221e-05
+driver_rossi,-5.07267792499988e-05
+status_Hydraulics,-5.73223795150124e-05
+driver_baumgartner,-7.643722004386788e-05
+driver_piastri,-7.806370380256667e-05
+status_Rear wing,-8.66909298351537e-05
+driver_wehrlein,-0.00011830278141609086
+constructor_racing_point,-0.00014256613311669497
+driver_karthikeyan,-0.00016859148214658503
+driver_doornbos,-0.00017104963011109752
+driver_albers,-0.0001881764426061139
+status_Vibrations,-0.00019447691450391602
+driver_jules_bianchi,-0.0002038212535820705
+driver_merhi,-0.00020874083563451328
+driver_chilton,-0.00021441316570602886
+driver_ocon,-0.0002480351507413214
+constructor_mf1,-0.0002743995779180608
+circuit_monaco,-0.00033233385127870994
+driver_petrov,-0.00039271968129357405
+driver_rosa,-0.0004132123762493389
+driver_sirotkin,-0.0004760800094553819
+driver_vergne,-0.00048329614049782423
+circuit_losail,-0.0005645000175976467
+driver_piquet_jr,-0.0005899424678287967
+status_Accident,-0.0005900560430738722
+circuit_red_bull_ring,-0.0006054814840118717
+driver_leclerc,-0.0006195127909964348
+driver_norris,-0.0007929745481164652
+circuit_yeongam,-0.0008146969287981864
+circuit_shanghai,-0.0008547396573220123
+driver_buemi,-0.000970473066380606
+circuit_portimao,-0.0009710480884905337
+circuit_magny_cours,-0.0010063662174207622
+circuit_marina_bay,-0.0010446831321339722
+status_Engine,-0.0010602898163052821
+circuit_ricard,-0.0010687757106279782
+circuit_sochi,-0.0011159671316562036
+circuit_bahrain,-0.0011193249385859528
+fastest_lap_missing,-0.0011840761697327284
+driver_russell,-0.001393954106716322
+driver_barrichello,-0.0014523837643407144
+constructor_aston_martin,-0.0014692201218846623
+circuit_valencia,-0.0015537072342055147
+constructor_bar,-0.001892813463731402
+driver_zonta,-0.0023069422315917356
+circuit_spa,-0.0026997145016976363
+constructor_brawn,-0.0033913713623123344
