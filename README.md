@@ -37,18 +37,49 @@ Finally, I thought it would be interesting to see which features ended up being 
 
 ## Results
 
-* **Ridge Regression [MAE: 2.556]**
+For each model, I showed their performance on the testing set via two "Actual vs. Predicted" plots. The first is a regular scatter plot with the actual finishing positon on the x-axis and the model predicted finsihing position on the y-axis; Each blue dot is a prediction and the red line shows the path of perfect prediction.
 
+This plot is a bit hard to interpret since there are so many predictions and so many of them overlap. The second "Actual vs. Predicted" plot shows the density of prediction at a certain area. The more predictions there are wihtin a certain hexagon, the more the hexagons color will change according the bar on the right. This way we can more easily see how close the model's predictions were to the perfect predictions shown by the red line.
+
+Additionally, I made a bar chart showing the most important featues for the model. With the permutation feature importance algorithm using negative mean absolute error as the scoring metric, I was able to find the features that most negatively affected performance when their values were shuffled (and effectively, when any learned relationship between that feature and the target variable were destroyed).
+
+* **Ridge Regression [MAE: 2.556]**
+ 
 The ridge regressor performed the worst with a mean absolute error above 2.5. 
 
 <div align='center'>
     <img src='plots/ridge/AVP_scatter_ridge.png' alt='Actual vs. predicted scatter plot for the ridge regressor' width='400'>
     <img src='plots/ridge/AVP_hexbin_ridge.png' alt='Density plot of actual vs. predicted for the ridge regressor' width='400'>
-<div>
+</div>
 
 <div align='center'>
     <img src='plots/ridge/features_ridge.png' alt='Most important features bar chart for the ridge regressor' width='400'>
 </div>
 
-discuss how the feature that ended up being the most important was surprising because it was one of the supposedly correlated values. we expect permutation feature importance to assign low importances to correlated value since their twin still supplies the signal, but it didn't seem to happen here.
+* **Random Forest Regression [MAE: 2.164]**
 
+The random forest regressor outperformed the the ridge regressor 15.3%.
+
+<div align='center'>
+    <img src='plots/random_forest/AVP_scatter_random_forest.png' alt='Actual vs. predicted scatter plot for the random forest regressor' width='400'>
+    <img src='plots/random_forest/AVP_hexbin_random_forest.png' alt='Density plot of actual vs. predicted for the random forest regressor' width='400'>
+</div>
+
+<div align='center'>
+    <img src='plots/random_forest/features_random_forest.png' alt='Most important features bar chart for the random forest regressor' width='400'>
+</div>
+
+* **Support Vector Regression [MAE: 2.130]**
+
+The supprt vector regressor performed the best out of all models, just beating the random forest regressor by 1.57% and shadowing the ridge regressor by 16.6%.
+
+<div align='center'>
+    <img src='plots/svr/AVP_scatter_SVR.png' alt='Actual vs. predicted scatter plot for the support vector regressor' width='400'>
+    <img src='plots/svr/AVP_hexbin_SVR.png' alt='Density plot of actual vs. predicted for the support vector regressor' width='400'>
+</div>
+
+<div align='center'>
+    <img src='plots/svr/features_SVR.png' alt='Most important features bar chart for the support vector regressor' width='400'>
+</div>
+
+Thoguh I was able to deduce a winning model by MAE, it's clear that each performed relatively similarly; Each of them can predict a driver's finishing position within 2 to 2.5 places of the actual position. I expected the most important feauture to be the drivers' starting grid position but it was consistently number two behind the finsihing status indicator variable.
