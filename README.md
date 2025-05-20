@@ -37,7 +37,18 @@ Finally, I thought it would be interesting to see which features ended up being 
 
 ## Results
 
+* **Ridge Regression [MAE: 2.556]**
 
+The ridge regressor performed the worst with a mean absolute error above 2.5. 
+
+<div align='center'>
+    <img src='plots/ridge/AVP_scatter_ridge.png' alt='Actual vs. predicted scatter plot for the ridge regressor' width='400'>
+    <img src='plots/ridge/AVP_hexbin_ridge.png' alt='Density plot of actual vs. predicted for the ridge regressor' width='400'>
+<div>
+
+<div align='center'>
+    <img src='plots/ridge/features_ridge.png' alt='Most important features bar chart for the ridge regressor' width='400'>
+</div>
 
 discuss how the feature that ended up being the most important was surprising because it was one of the supposedly correlated values. we expect permutation feature importance to assign low importances to correlated value since their twin still supplies the signal, but it didn't seem to happen here.
 
