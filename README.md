@@ -19,7 +19,7 @@ Formula 1 changes drivers and teams freqently and I wanted to avoid, as much as 
 
 I chose deal with missing fastest lap times like this becuase I felt it was better than not considering lap times at all. The desicion to impute the missing values with 300s and 0kph was somewhat arbitrary, but my goal was to "punish" these instances as a missing fastest lap time means that the driver didn't even start the race. On top of this, I thought it could be fruitful to build a correlation between the missing lap flag feature and the status feature (every time the missing lap flag has a value of 1, the status feature will have a value of something other than "Finished" and vice versa). The resulting table is in `data/dataframes/raw.csv`.
 
- **2. Data preprocessing**
+**2. Data preprocessing**
 
 The first preprocessing step I took was translating the strings in the data into machine readable values. I converted the average speeds of the fastest laps from a string in "mm:ss.ss" format to a number representing how may seconds that is. It's worth noting that none of these converted values get very close to the 300s imputation for missing lap times. After that I one hot encoded the circuit names, driver names, constructors, and statuses, greatly expanding the number of features in the data.
 
@@ -35,7 +35,9 @@ After each cross validation is done, the model with the best score is serialized
 
 Finally, I thought it would be interesting to see which features ended up being the best predictors for finishing position. For simplicity, I took a model agnostic approach and used ScikitLearn's permuation feature importance algorithm. Using joblib to recontruct my best models, I ran the algorithm on them using negative mean absolute error as the scoring metric. I organized the results into a two column tables (feature name and score) sorted in descending order by score (most important features towards the top). These tables are saved in `data/importances`.
 
- ## Results
+## Results
 
- discuss how the feature that ended up being the most important was surprising because it was one of the supposedly correlated values. we expect permutation feature importance to assign low importances to correlated value since their twin still supplies the signal, but it didn't seem to happen here.
+
+
+discuss how the feature that ended up being the most important was surprising because it was one of the supposedly correlated values. we expect permutation feature importance to assign low importances to correlated value since their twin still supplies the signal, but it didn't seem to happen here.
 
