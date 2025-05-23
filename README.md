@@ -29,7 +29,7 @@ Next, I created the first part of my pipeline. As a ColumnTransformer from Sciki
 
 Splitting the data in to 80% for training and 20% for testing, I ran a 10-fold grid search cross validation for each model. As for the parameter grids for each model, I chose to keep it simple and not explore very many parameters; I began with broad grids and iteratively updated them in the direction that scored best until the values the search converged to were not at the edges of the their grids. I used negative mean absolute error for the cross validation scoring.
 
-After each cross validation is done, the model with the best score is serialized and saved using joblib and used on the testing set, saving their predictions in `data/results`. (The serialized models are too large to push to GitHub, so they are not included in this repo).
+After each cross validation is done, the model with the best score is serialized and saved using joblib and used on the testing set, saving their predictions in `data/results`. (The serialized models are too large to push to GitHub, so they are not all included in this repo).
 
 **4. Feautre importance**
 
