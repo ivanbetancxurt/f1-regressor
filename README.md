@@ -6,7 +6,7 @@ An exploratory machine learning project aimed towards gaining more experience wi
 
 **1. Data Collection**
 
-Formula 1 changes drivers and teams freqently and I wanted to avoid, as much as possible, introducing a bias towards drivers and teams that appear in more frequently in races (or one against those that don't). This led to the decision of only considering the last 20 seasons (from 2025). I retrieved JSONs from the [Ergast API](https://ergast.com/mrd/) containing the details and results of every race (each JSON representing one race) for each season, stripping away extraneous information and organizing them into a dataframe where every instance holds information about a driver and their results at a specified race. Alongside the target variable (integer finsishing position), each instance in the raw dataframe had the following features:
+Formula 1 changes drivers and teams freqently and I wanted to avoid, as much as possible, introducing a bias towards drivers and teams that appear more frequently in races (or one against those that don't). This led to the decision of only considering the last 20 seasons (from 2025). I retrieved JSONs from the [Ergast API](https://ergast.com/mrd/) containing the details and results of every race (each JSON representing one race) for each season, stripping away extraneous information and organizing them into a dataframe where every instance holds information about a driver and their results at a specified race. Alongside the target variable (integer finsishing position), each instance in the raw dataframe had the following features:
 
  * Circuit name (String)
  * Driver name (String)
