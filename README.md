@@ -82,4 +82,4 @@ The supprt vector regressor performed the best out of all models, just beating t
     <img src='plots/svr/features_SVR.png' alt='Most important features bar chart for the support vector regressor' width='400'>
 </div>
 
-Thoguh I was able to deduce a winning model by MAE, it's clear that each performed relatively similarly; Each of them can predict a driver's finishing position within 2 to 2.5 places of the actual position. I expected the most important feauture to be the drivers' starting grid position but it was consistently number two behind the finsihing status indicator variable.
+Though I was able to deduce a winning model by MAE, it's clear that each performed relatively similarly; Each of them can predict a driver's finishing position within 2 to 2.5 places of the actual position. I expected the most important feauture to be the drivers' starting grid position but it was consistently number two behind the finsihing status indicator variable.
